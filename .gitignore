@@ -1,0 +1,21 @@
+# Maven
+target/
+*.class
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build / tooling output (the committed examples/*.asm are intentional)
+*.lst
+*.hex
+*.cod
+*.o
