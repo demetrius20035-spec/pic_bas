@@ -1,0 +1,27 @@
+name: build
+
+on:
+  push:
+    branches: [ "**" ]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java: [ '8', '11', '17' ]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK ${{ matrix.java }}
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{ matrix.java }}
+          cache: maven
+      - name: Build and test
+        run: mvn -B package
+      - name: Smoke-test the CLI
+        run: |
+          java -jar target/basic2asm.jar --list-chips
+          java -jar target/basic2asm.jar --chip PIC16F84A --input examples/blink.bas --output /tmp/blink.asm --clock 4MHz
