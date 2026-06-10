@@ -1,0 +1,9 @@
+; basic2asm memory map for PIC16F84A
+; ----------------------------------------------
+; Flash : 1024 words (est. used 52)
+; RAM   : 68 bytes, GPR start 0xC
+; ----------------------------------------------
+; RAM allocation (addr  name  size):
+; 0x0C  rt_d0            (1 byte)
+; 0x0D  rt_d1            (1 byte)
+; 0x0E  rt_d2            (1 byte)

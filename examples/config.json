@@ -1,0 +1,9 @@
+{
+  "chip": "PIC16F628A",
+  "clock": "4MHz",
+  "optimize": "size",
+  "comments": true,
+  "uartMode": "hardware",
+  "uartBaud": 9600,
+  "adcResolution": 8
+}
